@@ -90,6 +90,7 @@ var month = finances.length
 var total = 0
 var average = 0 
 var losses = 0
+var averageLosses = 0
 var greatest = 0
 var least = 0 
 
@@ -111,9 +112,13 @@ for (var x = 0; x < month; x++) {
     
 // 4 - average out the changes in profits 
 // using (`Total/Number of months`)
+average = total / month
+console.log("Average change ", average)
 
 // 5 - average out the changes in losses 
 // using (`Total/Number of months`)
+averageLosses = losses / month 
+console.log("Average losses: ", averageLosses)
 
 // 6 -The greatest increase in profits (date and amount)
 
