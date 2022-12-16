@@ -1,4 +1,4 @@
-var finances = [
+const finances = [
     ['Jan-2010', 867884],
     ['Feb-2010', 984655],
     ['Mar-2010', 322013],
@@ -86,14 +86,29 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099]
 ];
-
+var month = finances.length
+var total = 0
+var average = 0 
+var losses = 0
+var greatest = 0
+var least = 0 
 
 // 1 - calculate total number of months in database using
-console.log("Total number of months: ", finances.length)
+console.log("Total months: ", month)
+
 // 2 - calculate the net total amount of profits
+for (var i = 0; i < month; i++) {
+total = total + finances[i][1]
+} console.log("Total: ", total)
 
 // 3 - calculate the net total amount of losses
-
+for (var x = 0; x < month; x++) {
+    if (finances[x][1]< 0) { 
+        losses = total - finances[x][1]
+        console.log(finances[x][1])
+    }
+    } console.log("Losses: ", losses)
+    
 // 4 - average out the changes in profits 
 // using (`Total/Number of months`)
 
