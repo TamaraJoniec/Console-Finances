@@ -88,10 +88,10 @@ const finances = [
 ];
 var month = finances.length
 var total = 0
-var average = 0 
 var losses = 0
+var average = 0 
 var averageLosses = 0
-var greatest = 0
+var highestEarning = 0
 var least = 0 
 
 // 1 - calculate total number of months in database using
@@ -120,7 +120,15 @@ console.log("Average change ", average)
 averageLosses = losses / month 
 console.log("Average losses: ", averageLosses)
 
+var financeChanges = [0]
+for (var y = 0; y < month-1; y++) {
+ var profitLosses = finances[y][1]
+  financeChanges.push(finances[y+1][1] - finances[y][1])}
+console.log(financeChanges)
+    console.log("Greatest increase in profits ", Math.max(...financeChanges))
+ 
 // 6 -The greatest increase in profits (date and amount)
+
 
 // 7 -greatest decrease in losses (date and amount)
 
