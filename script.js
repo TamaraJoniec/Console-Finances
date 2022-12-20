@@ -86,49 +86,39 @@ const finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099]
 ];
-var month = finances.length
-var total = 0
-var losses = 0
-var average = 0 
-var averageLosses = 0
-var highestEarning = 0
-var least = 0 
 
 // 1 - calculate total number of months in database using
-console.log("Total months: ", month)
 
-// 2 - calculate the net total amount of profits
-for (var i = 0; i < month; i++) {
-total = total + finances[i][1]
-} console.log("Total: ", total)
+var Months = finances.length
 
-// 3 - calculate the net total amount of losses
-for (var x = 0; x < month; x++) {
-    if (finances[x][1]< 0) { 
-        losses = total - finances[x][1]
-        console.log(finances[x][1])
-    }
-    } console.log("Losses: ", losses)
-    
-// 4 - average out the changes in profits 
-// using (`Total/Number of months`)
-average = total / month
-console.log("Average change ", average)
+console.log("Total months: ", Months)
 
-// 5 - average out the changes in losses 
-// using (`Total/Number of months`)
-averageLosses = losses / month 
-console.log("Average losses: ", averageLosses)
+// 2 - calculate the net total amount of profits and loss
 
-var financeChanges = [0]
-for (var y = 0; y < month-1; y++) {
- var profitLosses = finances[y][1]
-  financeChanges.push(finances[y+1][1] - finances[y][1])}
-console.log(financeChanges)
-    console.log("Greatest increase in profits ", Math.max(...financeChanges))
- 
+var totalAmount = 0
+
+for(var i = 0; i < Months; i++) {
+    totalAmount += finances[i][1];
+} 
+
+console.log("Total: ", totalAmount)
+
+// 3 - average out the changes in profits and losses
+
+var financeChanges = 0
+
+for(var i = 1; i < finances.length; i++) {  
+financeChanges += (finances[i][1] - finances[i-1][1])
+}
+var average = financeChanges / (Months - 1)
+console.log("Average: ", average)
+
 // 6 -The greatest increase in profits (date and amount)
+var greatestAmount = 0
 
+for(var i = 0; i < finances.length; i++) {
+    if()
+}
 
 // 7 -greatest decrease in losses (date and amount)
 
