@@ -112,28 +112,30 @@ financeChanges += (finances[i][1] - finances[i-1][1])
 }
 var average = financeChanges / (Months - 1)
 console.log("Average: ", average)
-
 // The greatest increase in profits (date and amount)
 
-var highestIncrease = 0
-highestIncrease.date = finances[0][0]
-highestIncrease.amount = finances[0][1]
+var highestIncrease = { 
+    date: finances[0][0],
+    amount: finances[0][1] 
+}
 
 for(var i = 1; i < finances.length; i++) {
     if(finances[i][1] - finances[i-1][1] > highestIncrease.amount)
-    highestIncrease.date = finances[1][0];
-    highestIncrease.amount = finances[i][1] - finances[i-1][1]
+   {highestIncrease.date = finances[i][0];
+    highestIncrease.amount = finances[i][1] - finances[i-1][1]}
 }
-
+console.log("Highest Increase: ", highestIncrease)
 // Greatest decrease in losses (date and amount)
 
-var biggestDecrease = 0
-biggestDecrease.date = finances[0][0]
-biggestDecrease.amount = finances[0][1]
-
-for(var i = 1; i < finances.length; i++) 
-{if(finances[i][1] - finances[i-1][1] < biggestDecrease.amount)
-    biggestDecrease.date = finances[1][0];
-    biggestDecrease.amount = finances[i][1] - finances[i-1][1]
+var biggestDecrease = { 
+date: finances[0][0],
+amount: finances[0][1]
 }
+
+for(var i = 1; i < finances.length; i++) {
+    if(finances[i][1] - finances[i-1][1] < biggestDecrease.amount)
+    {biggestDecrease.date = finances[i][0];
+    biggestDecrease.amount = finances[i][1] - finances[i-1][1]}
+}
+console.log("Highest Decrease: ", biggestDecrease)
 
