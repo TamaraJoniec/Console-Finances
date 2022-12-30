@@ -87,13 +87,13 @@ const finances = [
     ['Feb-2017', 671099]
 ];
 
-// 1 - calculate total number of months in database using
+// Calculate total number of months in database using
 
 var Months = finances.length
 
 console.log("Total months: ", Months)
 
-// 2 - calculate the net total amount of profits and loss
+// Calculate the net total amount of profits and loss
 
 var totalAmount = 0
 
@@ -103,7 +103,7 @@ for(var i = 0; i < Months; i++) {
 
 console.log("Total: ", totalAmount)
 
-// 3 - average out the changes in profits and losses
+// Average out the changes in profits and losses
 
 var financeChanges = 0
 
@@ -113,12 +113,27 @@ financeChanges += (finances[i][1] - finances[i-1][1])
 var average = financeChanges / (Months - 1)
 console.log("Average: ", average)
 
-// 6 -The greatest increase in profits (date and amount)
-var greatestAmount = 0
+// The greatest increase in profits (date and amount)
 
-for(var i = 0; i < finances.length; i++) {
-    if()
+var highestIncrease = 0
+    date: finances[0][0]
+    amount: finances[0][1]
+
+for(var i = 1; i < finances.length; i++) {
+    if(finances[i][1] - finances[i-1][1] > highestIncrease.amount)
+    highestIncrease.date = finances[1][0];
+    highestIncrease.amount = finances[i][1] - finances[i-1][1]
 }
 
-// 7 -greatest decrease in losses (date and amount)
+// Greatest decrease in losses (date and amount)
+
+var biggestDecrease = 0
+    date: finances[0][0]
+    amount: finances[0][1]
+
+for(var i = 1; i < finances.length; i++) {
+    if(finances[i][1] - finances[i-1][1] < biggestDecrease.amount)
+    biggestDecrease.date = finances[1][0];
+    biggestDecrease.amount = finances[i][1] - finances[i-1][1]
+}
 
