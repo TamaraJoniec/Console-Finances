@@ -30,3 +30,7 @@ When I open the code in the browser the resulting analysis should look similar t
 The URL of the deployed application: https://tamarajoniec.github.io/Console-Finances/
 
 The final code should print the analysis to the console.
+
+## License
+
+MIT Licence.
